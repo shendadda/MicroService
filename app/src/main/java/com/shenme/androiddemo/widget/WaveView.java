@@ -13,7 +13,7 @@ import android.view.View;
 /**
  * Created by CANC on 2016/12/5.
  *
- * @Authon http://blog.csdn.net/u011507982/article/details/53414422
+ * @Author http://blog.csdn.net/u011507982/article/details/53414422
  */
 
 public class WaveView extends View {
