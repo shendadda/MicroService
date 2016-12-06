@@ -55,6 +55,11 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.ll_user_info)
     LinearLayout llUserInfo;
 
+    @BindView(R.id.fragment_layout)
+    FrameLayout fragmentLayout;
+    @BindView(R.id.b_wave_view)
+    WaveView bWaveView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
@@ -82,8 +87,20 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 llUserInfo.setLayoutParams(lp);
             }
         });
+
+        final LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(-2, -2);
+        layoutParam.gravity =  Gravity.CENTER;
+        waveView.setOnWaveAnimationListener(new WaveView.OnWaveAnimationListener() {
+            @Override
+            public void OnWaveAnimation(float y) {
+                layoutParam.setMargins(0, 0, (int) y + 2, (int) y + 2);
+                fragmentLayout.setLayoutParams(layoutParam);
+            }
+        });
+
+
         //容器大小设置
-        llUserInfo.getLayoutParams().height = (int) (346.0f / 640 * Utils.getScreenWidth(getActivity()));
+        llUserInfo.getLayoutParams().height = (int) (246.0f / 640 * Utils.getScreenWidth(getActivity()));
         //头像背景大小及位置
         int size = (int) (100f / 640 * Utils.getScreenWidth(getActivity()));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(size, size);

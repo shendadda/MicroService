@@ -17,7 +17,7 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="240dp"
                 android:background="@mipmap/icon_background_head">
 
                 <TextView
@@ -61,7 +61,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:src="@mipmap/ic_launcher" />
+                            android:src="@mipmap/icon_default_head_h" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -113,7 +113,7 @@
                 android:layout_height="105dp"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -139,6 +139,19 @@
                     android:background="@color/white"
                     android:gravity="center" />
             </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fragment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@mipmap/icon_lg_bw">
+
+                <com.shenme.androiddemo.widget.WaveView
+                    android:id="@+id/b_wave_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom" />
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>
